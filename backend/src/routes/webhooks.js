@@ -81,8 +81,8 @@ async function handleUserCreated(data) {
     const userData = {
       clerkId: data.id,
       email: data.email_addresses[0]?.email_address || "",
-      firstName: data.first_name || "",
-      lastName: data.last_name || "",
+      firstName: data.first_name || "User",
+      lastName: data.last_name || "Unknown",
       profileImageUrl: data.image_url || "",
       emailVerified:
         data.email_addresses[0]?.verification?.status === "verified",
@@ -104,8 +104,8 @@ async function handleUserUpdated(data) {
   try {
     const updateData = {
       email: data.email_addresses[0]?.email_address || "",
-      firstName: data.first_name || "",
-      lastName: data.last_name || "",
+      firstName: data.first_name || "User",
+      lastName: data.last_name || "Unknown",
       profileImageUrl: data.image_url || "",
       emailVerified:
         data.email_addresses[0]?.verification?.status === "verified",

@@ -2,13 +2,17 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "sonner";
 
 // Import components
 import Header from "./components/Header";
 import LandingPage from "./pages/LandingPage";
+import ItemsPage from "./pages/ItemsPage";
+import ItemDetailPage from "./pages/ItemDetailPage";
+import AddItemPage from "./pages/AddItemPage";
+import SwapsPage from "./pages/SwapsPage";
 import Dashboard from "./pages/Dashboard";
-import ProfilePage from "./pages/ProfilePage";
+// import ProfilePage from "./pages/ProfilePage";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -20,21 +24,31 @@ function App() {
           <Routes>
             {/* Public routes */}
             <Route path="/" element={<LandingPage />} />
+            <Route path="/items" element={<ItemsPage />} />
+            <Route path="/items/:id" element={<ItemDetailPage />} />
 
             {/* Protected routes */}
+            <Route
+              path="/add-item"
+              element={
+                <ProtectedRoute>
+                  <AddItemPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/swaps"
+              element={
+                <ProtectedRoute>
+                  <SwapsPage />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/dashboard"
               element={
                 <ProtectedRoute>
                   <Dashboard />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute>
-                  <ProfilePage />
                 </ProtectedRoute>
               }
             />
