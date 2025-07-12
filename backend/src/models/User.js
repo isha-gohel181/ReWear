@@ -34,6 +34,15 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    points: {
+      type: Number,
+      default: 100, // Starting points for new users
+    },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
     createdAt: {
       type: Date,
       default: Date.now,
