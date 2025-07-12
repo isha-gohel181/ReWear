@@ -1,3 +1,5 @@
+//frontend/src/pages/Dashboard.jsx
+
 import React, { useState, useEffect } from "react";
 import { useUser } from "@clerk/clerk-react";
 import {

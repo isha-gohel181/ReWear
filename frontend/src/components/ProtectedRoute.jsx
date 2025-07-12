@@ -1,3 +1,5 @@
+//src/components/ProtectedRoute.jsx
+
 import React from "react";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 

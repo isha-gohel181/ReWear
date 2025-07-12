@@ -1,3 +1,4 @@
+//frontend/src/pages/LandingPage.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import { SignedIn, SignedOut, SignUpButton } from "@clerk/clerk-react";

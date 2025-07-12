@@ -1,3 +1,4 @@
+//backend/src/routes/auth.js
 const express = require("express");
 const { requireAuth } = require("../middleware/auth");
 

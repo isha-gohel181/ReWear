@@ -1,3 +1,4 @@
+//backend/src/server.js
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -17,7 +18,7 @@ app.use(helmet());
 app.use(morgan("combined"));
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
@@ -30,9 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Database connection
 mongoose
-  .connect(
-    process.env.MONGODB_URI || "mongodb://localhost:27017/mern-clerk-app"
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((error) => console.error("MongoDB connection error:", error));
 

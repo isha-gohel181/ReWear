@@ -1,3 +1,4 @@
+//backend/src/middleware/auth.js
 const { requireAuth } = require("@clerk/express");
 
 // Middleware to get user info (optional use)
